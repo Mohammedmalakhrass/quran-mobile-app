@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d3b2e" />
+  <title>المصحف الشريف</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top App Bar -->
+  <header id="top-bar" class="overlay-bar top-bar">
+    <button id="btn-index" class="icon-btn" aria-label="فهرس السور">
+      <span>☰</span>
+      <small>الفهرس</small>
+    </button>
+    <div class="page-info">
+      <span id="surah-title">الفاتحة</span>
+      <span id="page-meta">صفحة 1 • الجزء 1</span>
+    </div>
+<button id="btn-about" class="icon-btn" aria-label="عن التطبيق والإهداء">
+      <span>ℹ️</span>
+      <small>إهداء</small>
+    </button>
+  </header>
+
+  <!-- Main Quran Viewer -->
+  <main id="viewer-container">
+    <div id="zoom-wrapper">
+      <img id="quran-page" src="assets/pages/page_001.webp" alt="صفحة المصحف" draggable="false" />
+    </div>
+    <!-- Tap zones for quick page turning -->
+    <div id="tap-next" class="tap-zone" title="الصفحة التالية"></div>
+    <div id="tap-center" class="tap-zone" title="إظهار/إخفاء القوائم"></div>
+    <div id="tap-prev" class="tap-zone" title="الصفحة السابقة"></div>
+  </main>
+
+  <!-- Bottom Navigation Bar -->
+  <footer id="bottom-bar" class="overlay-bar bottom-bar">
+    <button id="btn-prev" class="nav-btn">السابقة</button>
+    <div class="slider-wrapper">
+      <input type="range" id="page-slider" min="1" max="624" value="1" />
+      <div class="jump-row">
+        <label for="page-input">انتقال لصفحة:</label>
+        <input type="number" id="page-input" min="1" max="624" value="1" />
+        <button id="btn-go">اذهب</button>
+      </div>
+    </div>
+    <button id="btn-next" class="nav-btn">التالية</button>
+  </footer>
+
+  <!-- Surah & Juz Index Drawer -->
+  <aside id="index-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>فهرس المصحف الشريف</h2>
+        <button id="btn-close-index" class="close-btn">✕</button>
+      </div>
+      <div class="search-box">
+        <input type="text" id="surah-search" placeholder="ابحث باسم السورة..." />
+      </div>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="surahs">السور (114)</button>
+        <button class="tab-btn" data-tab="juzs">الأجزاء (30)</button>
+        <button class="tab-btn" data-tab="bookmarks">العلامة المرجعية</button>
+      </div>
+      <div id="tab-surahs" class="tab-panel active"></div>
+      <div id="tab-juzs" class="tab-panel"></div>
+      <div id="tab-bookmarks" class="tab-panel">
+        <div class="bookmark-card">
+          <p>الصفحة المحفوظة حالياً: <strong id="saved-bookmark-page">1</strong></p>
+          <button id="btn-save-bookmark" class="primary-btn">حفظ الصفحة الحالية كعلامة</button>
+          <button id="btn-goto-bookmark" class="secondary-btn">الانتقال للعلامة المحفوظة</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- نافذة عن المطور والإهداء -->
+  <aside id="about-modal" class="modal hidden">
+    <div class="modal-content about-modal-content">
+      <div class="modal-header">
+        <h2>عن التطبيق والإهداء</h2>
+        <button id="btn-close-about" class="close-btn">✕</button>
+      </div>
+      <div class="about-body">
+        <div class="ornament">﷽</div>
+        
+        <div class="dedication-box">
+          <h3>إهداء وصدقة جارية</h3>
+          <p>
+            اللهم اجعل هذا العمل خالصاً لوجهك الكريم، وصدقة جارية عني وعن والديّ، 
+            وعن كل من ساهم في نشره أو قرأ منه حرفاً. اللهم اغفر لهم وارحمهم وأسكنهم فسيح جناتك.
+          </p>
+        </div>
+
+        <div class="developer-box">
+          <p class="dev-name"> محمد محمود الأخرس   </p>
+          <p class="dev-desc">نسألكم الدعاء بظهر الغيب</p>
+        </div>
+
+        <div class="app-version">الإصدار 1.0 • مصحف المدينة النبوية</div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
