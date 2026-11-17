@@ -23,7 +23,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-       - name: Install dependencies & sync Capacitor
+      - name: Install dependencies & sync Capacitor
         run: |
           npm install
           npm install --save-dev @capacitor/cli @capacitor/core @capacitor/android
