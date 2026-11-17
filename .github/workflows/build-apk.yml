@@ -23,10 +23,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install dependencies & sync Capacitor
-        run: |
-          npm install
-          npx @capacitor/cli sync android
+      - name: Install dependencies
+        run: npm install
 
       - name: Build Debug APK
         run: |
