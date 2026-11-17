@@ -26,8 +26,7 @@ jobs:
       - name: Install dependencies & sync Capacitor
         run: |
           npm install
-          npm install --save-dev @capacitor/cli @capacitor/core @capacitor/android
-          npx cap sync android
+          npx @capacitor/cli sync android
 
       - name: Build Debug APK
         run: |
