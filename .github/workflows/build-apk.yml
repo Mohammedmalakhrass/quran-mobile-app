@@ -29,11 +29,13 @@ jobs:
       - name: Build Web Assets
         run: npm run build --if-present
 
+      - name: Sync Capacitor Plugins
+        run: npx cap update android
+
       - name: Build Debug APK
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew wrapper --gradle-version 8.2.1
           ./gradlew assembleDebug
 
       - name: Upload APK
